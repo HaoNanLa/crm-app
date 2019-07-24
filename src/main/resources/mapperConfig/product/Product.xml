@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.google.project.crm.dao.ProductDao">
+
+	<!-- 以下方法将作为学习使用的通用的实现方法 -->
+	<!-- 新增一条记录 -->
+	<insert id="save" parameterType="UserBean" keyProperty="id"
+		useGeneratedKeys="true">
+		insert into
+		t_user(name, email,uname,pwd)
+		values
+		(#{name},#{email},#{uname},#{pwd})
+	</insert>
+
+	<delete id="deleteUser" parameterType="int">
+		delete from
+		t_user where id=#{id}
+	</delete>
+	
+</mapper> 
