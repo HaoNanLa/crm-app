@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleat.org">
+<head>
+<meta charset="UTF-8">
+<script th:src="@{/js/index.js}"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>name</th>
+			<th>price</th>
+		</tr>
+		<tr th:each="product: ${products}">
+			<td th:text="${product.id}">1</td>
+			<td th:text="${product.name}">cup</td>
+			<td th:text="${product.price}">2.5</td>
+		</tr>
+	</table>
+</body>
+</html>
