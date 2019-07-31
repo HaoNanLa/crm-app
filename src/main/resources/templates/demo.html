@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleat.org">
+<head>
+<meta charset="UTF-8">
+<title>CRM System</title>
+</head>
+<body style="margin: 0">
+
+	<div th:replace="~{header::header}"></div>
+
+	name:
+	<input type="text" class="new-name">price:
+	<input type="text" class="new-price">
+	<a href="#" class="create">create</a>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>name</th>
+			<th>price</th>
+			<th>operations</th>
+		</tr>
+		<tr th:each="product: ${products}">
+			<td class="id" th:text="${product.id}"></td>
+			<td><input class="name" type="text" th:value="${product.name}"></td>
+			<td><input class="price" type="text" th:value="${product.price}"></td>
+			<td style="display: flex; justify-content: space-around;"><a
+				href="#" class="delete">删除</a><a href="#" class="update">修改</a></td>
+		</tr>
+	</table>
+	<div
+		style="width: 400px; display: flex; justify-content: space-around;">
+		<a href="#" class="previous">上一页</a> <a href="#" class="next">下一页</a>
+		<span>第<span style="font-size: 40px"
+			th:text="${current}"></span> 页， 共<span
+			style="font-size: 40px" th:text="${total}">4</span> 页
+		</span>
+	</div>
+	<div th:replace="~{footer::footer}"></div>
+	<script th:src="@{/js/jquery-3.4.1.js}"></script>
+	
+	<script th:src="@{/js/demo.js}"></script>
+</body>
+</html>
