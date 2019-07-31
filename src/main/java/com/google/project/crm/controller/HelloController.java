@@ -1,5 +1,6 @@
 package com.google.project.crm.controller;
 
+
 import java.io.File;
 import java.io.IOException;
 
@@ -40,11 +41,6 @@ public class HelloController {
 		mv.addObject("products",pDao.findAll());
 		mv.setViewName("index");
 		return mv;
-	}
-	@GetMapping("/upload")
-	public String sdfa() {
-		
-		return "upload";
 	}
 	@GetMapping("/demo")
 	public ModelAndView insdfex(HttpSession session) {
@@ -99,24 +95,10 @@ public class HelloController {
 		pDao.update(p);
 		return "{\"0\":\"下单成功,请查看数据库。\"}";
 	}
-	
 	@RequestMapping(value = "/setpage", produces = "text/plain;charset=UTF-8", method = RequestMethod.POST)
 	@ResponseBody
 	public String sg(int pageOffset,HttpSession session) {
 		session.setAttribute("page", (int)session.getAttribute("page")+pageOffset);
 		return "{\"0\":\"下单成功,请查看数据库。\"}";
 	}
-	
-	
-	@PostMapping(value = "/load")
-	@ResponseBody
-	public String ssdafasdg(MultipartFile[] files) throws IllegalStateException, IOException {
-		for (MultipartFile file : files) {
-			file.transferTo(new File("E:/aaa/"+file.getOriginalFilename()));
-		}
-		return "{\"0\":\"下单成功,请查看数据库。\"}";
-	}
-	
-	
-	
 }

@@ -66,5 +66,8 @@ function setPage(offset){
 			window.location.reload()
 		}
 	});
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of https://github.com/HaoNanLa/crm-app.git
 }
